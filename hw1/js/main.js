@@ -140,6 +140,21 @@ Do not overlap any other object.
 ********************************************/
 
 //Draw Umbrella top here
+		if(cPart4 && xPart4){
+			xPart4.beginPath();
+			xPart4.arc(20, 20, 20, 0, 1*Math.PI, true);
+			xPart4.stroke();
+
+			xPart4.beginPath();
+			xPart4.moveTo(0, 20);
+			xPart4.lineTo(0, 25);
+			xPart4.bezierCurveTo(0, 20, 10, 20, 10, 25);
+			xPart4.bezierCurveTo(10, 20, 20, 20, 20, 25);
+			xPart4.bezierCurveTo(20, 20, 30, 20, 30, 25);
+			xPart4.bezierCurveTo(30, 20, 40, 20, 40, 25);
+			xPart4.lineTo(40, 20);
+			xPart4.stroke();
+		}
 
 /*******************************************
 PART 5
