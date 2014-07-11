@@ -211,6 +211,52 @@ You must use at least 3 different methods.
 
 // Draw scene here
 
+		if(cPart7 && xPart7){
+			var bgPath = document.getElementById('sunny'),
+					coolString = 'Yayyyy, Summer!';
+			cPart7.width = 640;
+			cPart7.height = 480;
+			xPart7.fillStyle = 'black';
+			xPart7.strokeStyle = 'black';
+			xPart7.save();
+
+			xPart7.drawImage(bgPath, 0, 0);
+
+			xPart7.beginPath();
+			xPart7.arc(320, 240, 80, 0, 2*Math.PI, false);
+			xPart7.fillStyle = 'yellow';
+			xPart7.fill();
+
+			//left eye
+				//left 240 + 40
+				//top 160 + 60
+			//right eye
+				//left 240 + 120
+				//top 160 + 60
+
+			xPart7.restore();
+
+			//left eye
+			xPart7.beginPath();
+			xPart7.arc(280, 220, 5, 0, 2*Math.PI, false);
+			xPart7.fill();
+
+			//right eye
+			xPart7.beginPath();
+			xPart7.arc(360, 220, 5, 0, 2*Math.PI, false);
+			xPart7.fill();
+
+			//smile
+			xPart7.beginPath();
+			xPart7.moveTo(280, 260);
+			xPart7.bezierCurveTo(280, 300, 360, 300, 360, 260);
+			xPart7.stroke();
+
+			xPart7.font = '25pt Helvetica';
+			xPart7.fillStyle = 'white';
+			xPart7.fillText(coolString, 20, 400);
+		}
+
 	}else{
 		//no canvas
 	}
