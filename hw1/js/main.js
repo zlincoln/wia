@@ -1,18 +1,32 @@
 /*
-     Name:
-     Date:
+     Name: Zachary Lincoln
+     Date: 7/10/14
      Class & Section:  WIA-####
      Comments: "HTML5 Canvas Drawing"
  */
 
-
+window.onload = function(){
 /*******************************************
 HTML5 Shape Drawing Activity
     1.  Setup the canvas and 2d context
     2.  Draw out each shape in the sections below
      
 ********************************************/
-
+	if(Modernizr.canvas){
+		var cPart1 = document.getElementById('part1'),
+				xPart1 = cPart1.getContext('2d');
+		var cPart2 = document.getElementById('part2'),
+				xPart2 = cPart2.getContext('2d');
+		var cPart3 = document.getElementById('part3'),
+				xPart3 = cPart3.getContext('2d');
+		var cPart4 = document.getElementById('part4'),
+				xPart4 = cPart4.getContext('2d');
+		var cPart5 = document.getElementById('part5'),
+				xPart5 = cPart5.getContext('2d');
+		var cPart6 = document.getElementById('part6'),
+				xPart6 = cPart6.getContext('2d');
+		var cPart7 = document.getElementById('part7'),
+				xPart7 = cPart7.getContext('2d');
 /*******************************************
 FILE SETUP
 
@@ -36,6 +50,14 @@ Reminder - set the style first then draw.
 
 //Draw Rectangle here
 
+		if(cPart1 && xPart1){
+			xPart1.fillStyle = 'blue';
+			xPart1.strokeStyle = 'black';
+			
+			xPart1.fillRect(0, 0, 50, 100);
+			xPart1.strokeRect(0, 0, 50, 100);
+		}
+
 
 /*******************************************
 PART 2
@@ -52,7 +74,18 @@ Use the arc method
 
 //Draw Circle here
 
+		if(cPart2 && xPart2){
+			xPart2.fillStyle = 'rgba(255, 64, 62, .5)';
+			xPart2.strokeStyle = 'black';
 
+			xPart2.beginPath();
+			xPart2.arc(50, 50, 20, 0, 2*Math.PI, false);
+			xPart2.fill();
+
+			xPart2.beginPath();
+			xPart2.arc(50, 50, 30, 0, 2*Math.PI, false);
+			xPart2.stroke();
+		}
 
 
 /*******************************************
@@ -68,6 +101,30 @@ Height and width and color are up to you.
 
 
 //Draw Star here
+
+		if(cPart3 && xPart3){
+			//help from http://www.websanova.com/extensions/websanova/wextensions/html5/star
+			var x = 100,
+					y = 100,
+					width = 25,
+					height = 25;
+			xPart3.fillStyle = 'yellow';
+
+			xPart3.beginPath();
+	    xPart3.moveTo(x + width*0.5, y);
+	    xPart3.lineTo(x + width*0.375, y + height*0.4);
+	    xPart3.lineTo(x, y + height*0.4);
+	    xPart3.lineTo(x + width*0.3, y + height*0.625);
+	    xPart3.lineTo(x + width*0.2, y + height);
+	    xPart3.lineTo(x + width*0.5, y + height*0.725);
+	    xPart3.lineTo(x + width*0.8, y + height);
+	    xPart3.lineTo(x + width*0.7, y + height*0.625);
+	    xPart3.lineTo(x + width, y + height*0.4);
+	    xPart3.lineTo(x + width*0.625, y + height*0.4);
+	    xPart3.lineTo(x + width*0.5, y);
+	    xPart3.closePath(); 
+			xPart3.fill();
+		}
 
 
 /*******************************************
@@ -125,3 +182,7 @@ You must use at least 3 different methods.
 // Draw scene here
 
 
+	}else{
+		//no canvas
+	}
+}
