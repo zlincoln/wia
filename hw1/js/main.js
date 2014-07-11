@@ -165,6 +165,13 @@ Draw text into your canvas.  It can said whatever you would like in any color.
 ********************************************/
 
 //Draw text here
+			if(cPart5 && xPart5){
+				var string = 'Hello World!';
+
+				xPart5.font = '25pt Georgia';
+				xPart5.fillStyle = 'blue';
+				xPart5.fillText(string, 20, 60);
+			}
 
 /*******************************************
 PART 6
