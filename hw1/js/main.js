@@ -187,7 +187,15 @@ Reminder to use the drawImage method for all 3 of the ways.
 ********************************************/
 
 //Draw images here
-
+			if(cPart6 && xPart6){
+				cPart6.height = 2035;
+				cPart6.width = 2000;
+				// var imgPath = 'image/logo.png';
+				var imgPath = document.getElementById('image');
+				xPart6.drawImage(imgPath, 0, 0);
+				xPart6.drawImage(imgPath, 0, 1088, 1650, 544);
+				xPart6.drawImage(imgPath, 279, 595, 354, 403, 0, 1632, 354, 403);
+			}
 
 
 /*******************************************
@@ -202,7 +210,6 @@ You must use at least 3 different methods.
 ********************************************/
 
 // Draw scene here
-
 
 	}else{
 		//no canvas
