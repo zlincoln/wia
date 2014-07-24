@@ -3,7 +3,7 @@ var token = {
 	secret: 'hQ8V4cS9nrFf83eXCaPkJq1h5s59MaiNX3Ta643Bo2u5ykrtPu'
 },
 request_data = {
-	url: 'http://api.tumblr.com/v2/blog/willmstevenson.com/posts/?offset=',
+	url: 'http://api.tumblr.com/v2/blog/willmstevenson.com/posts/',
 	method: 'GET',
 	data: {
 		api_key: token.public,
@@ -21,9 +21,6 @@ makeRequest = function(){
 		data: request_data.data,
 		success: function(data){
 			$.each(data.response.posts, function(index, post){
-				// var $node = $('<div class="post-template col-xs-4"><img class="img-responsive" src='+post.photos[0].alt_sizes[1].url+'></div>');
-				// $clone.find('img').attr('src', post.photos[0].alt_sizes[1].url);
-				// msnry.appended($node);
 				var $clone = $('#templates .post-template').clone(true);
 				$clone.find('img').attr('src', post.photos[0].alt_sizes[1].url);
 				$target.append($clone);
