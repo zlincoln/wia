@@ -1,11 +1,20 @@
 @import '../bower_components/bootstrap/less/bootstrap';
 
 #post-target{
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 	.post-template{
 		padding-bottom: 30px;
+		.opacity(0);
+		.transition(opacity .4s ease-in-out);
 		img{
 			margin: 0 auto;
 		}
+		&.loaded{
+			.opacity(1);
+		}
 	}
+}
+
+#request-more{
+	margin-bottom: 20px;
 }
