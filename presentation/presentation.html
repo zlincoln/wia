@@ -17,7 +17,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">Masonry Demo</a>
+		      <a class="navbar-brand" href="index.html">Masonry Demo</a>
 		    </div>
 		    <div class="collapse navbar-collapse" id="main-nav">
 		    	<ul class="nav navbar-nav navbar-right">
@@ -31,46 +31,97 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<span>Hello World</span>
+				<h1>Masonry Plugin Demo</h1>
+				<h3>For Tiled Grid Layouts</h3>
 			</section>
 			<section>
-				<span>Hello World2</span>
+				<section>
+					<h3>Installation</h3>
+				</section>
+				<section>
+					<p>With Bower via command line</p>
+					<pre><code>bower install masonry</code></pre>
+					<pre><code>bower install imagesloaded</code></pre>
+				</section>
+				<section>
+					<p>Don't have Bower?</p>
+					<p>Install <a href="http://nodejs.org">Node</a>, then via command line:</p>
+					<pre><code>sudo npm install -g bower</code></pre>
+					<pre><code>bower install masonry</code></pre>
+					<pre><code>bower install imagesloaded</code></pre>
+				</section>
+				<section>
+					<p>Add the following scripts &lt;/body&gt;</p>
+					<pre><code>&lt;script src="bower_components/masonry/dist/masonry.pkgd.min.js"&gt;&lt;/script&gt;</code></pre>
+					<pre><code>&lt;script src="bower_components/imagesloaded/imagesloaded.pkgd.min.js"&gt;&lt;/script&gt;</code></pre>
+					<p>In this demo, I'm assuming you're using it with jQuery, though you can get by without it.</p>
+				</section>
 			</section>
 			<section>
-				<span>Hello World3</span>
+				<section>
+					<h3>Initialization</h3>
+				</section>
+				<section>
+					<p>The most basic initilization is as simple as</p>
+					<pre><code>$container.masonry();</code></pre>
+					<p>Doesn't need to be contained within document.ready</p>
+				</section>
+				<section>
+					<p>Masonry takes each item within the container and repositions it absolutely based upon width and height.  This can cause issues when images are still loading and the element hasn't reached its full height.</p>
+					<p>The solution is to use imagesLoaded, which runs a function you specify once all child elements have been fully rendered.</p>
+					<pre><code>imagesLoaded($container, function(){
+						$container.masonry();
+});				</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Dynamically adding and removing elements</h3>
+				</section>
+				<section>
+					<p>How would you add elements after the inital layout? Steps are as follows:</p>
+					<ol>
+						<li>Append new elements to the DOM</li>
+						<li>Add them to the masonry registry<pre><code>$container.masonry('addItems', elementArray)</code></pre>
+						</li>
+						<li>Trigger masonry relayout<pre><code>$container.masonry();</code></pre></li>
+					</ol>
+				</section>
+				<section>
+					<p>Removing elements is easier:</p>
+					<pre><code>$container.masonry('remove', elementArray);</code></pre>
+					<p>Elements are removed from registry and DOM</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Making it pretty</h3>
+				</section>
+				<section>
+					<p>By default, masonry tiles appear stacked and then fan out to their positions like cards.  However, using an emmitted event called 'layoutComplete' we can fade them in when in final position.</p>
+				</section>
+				<section>
+					<p>Syntax for catching masonry events is similar to jquery.</p>
+					<pre><code>$container.masonry('on', 'layoutComplete', callback);</code></pre>
+					<p>In this case, the callback function would add a 'loaded' class to the child elements.  In my css, those elements have an opacity of zero until the loaded class had been attached.</p>
+				</section>
+			</section>
+			<section>
+				<h2>Be sure to check out the <a href="http://masonry.desandro.com" target="_blank">documentation</a> for all options, methods, and events!</h2>
 			</section>
 		</div>
 	</div>
 	<script src="js/thirdparty/reveal/js/reveal.min.js"></script>
+	<script type="text/javascript">
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			theme: 'moon',
+			transition: Reveal.getQueryHash().transition || 'default'
+		});
 
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: 'moon', // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default' // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-
-				// Optional libraries used to extend on reveal.js
-				// dependencies: [
-				// 	{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				// 	{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				// 	{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				// 	{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-				// 	{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-				// 	{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				// ]
-			});
-
-		</script>
+	</script>
 </body>
 </html>
