@@ -2,22 +2,44 @@
 	position: relative;
 	div.map-node{
 		position: absolute;
+		i.glyphicon{
+			font-size: 32px;
+			color: #BF8654;
+		}
 		.info-box{
 			display: none;
+			position: relative;
 			top: 20px;
 			left: 50%;
 			width: 400px;
 			margin-left: -200px;
 			background: white;
 			border: 2px solid black;
+			.box-sizing(border-box);
+			padding: 20px;
+			p{
+				margin: 0;
+			}
 		}
 		&.huntington{
-			top: percentage(258/725);
-			left: percentage(380/936);
+			top: percentage(240/725);
+			left: percentage(370/936);
 		}
 		&.moony{
 			top: percentage(586/725);
 			left: percentage(472/936);
+			img{
+				margin: 0 auto 20px;
+			}
+			.address{
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			.info-box{
+				top: auto;
+				bottom: 369px;
+			}
 		}
 	}
 }
