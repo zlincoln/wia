@@ -16,8 +16,8 @@ if($msnryContainer.length > 0){
 $(function(){
 	if($mapContainer.length > 0){
 		$mapContainer.find('.map-node').on('click', function(){
-			$(this).siblings().removeClass('open');
-			$(this).toggleClass('open');
+			$(this).siblings().find('.info-box').fadeOut();
+			$(this).find('.info-box').fadeIn();
 		});
 	}
 })
