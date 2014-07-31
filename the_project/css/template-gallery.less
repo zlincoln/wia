@@ -3,8 +3,13 @@ section#gallery{
 		padding-bottom: 30px;
 		.opacity(0);
 		.transition(opacity .4s ease-in-out);
-		img{
-			margin: 0 auto;
+		a{
+			display: block;
+			background: black;
+			border: 6px solid black;
+			img{
+				margin: 0 auto;
+			}
 		}
 		&.loaded{
 			.opacity(1);

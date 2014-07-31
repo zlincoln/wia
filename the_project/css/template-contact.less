@@ -1,0 +1,28 @@
+#map{
+	position: relative;
+	div.map-node{
+		position: absolute;
+		.info-box{
+			display: none;
+			top: 20px;
+			left: 50%;
+			width: 400px;
+			margin-left: -200px;
+			background: white;
+			border: 2px solid black;
+		}
+		&.huntington{
+			top: percentage(258/725);
+			left: percentage(380/936);
+		}
+		&.moony{
+			top: percentage(586/725);
+			left: percentage(472/936);
+		}
+		&.open{
+			.info-box{
+				display: block;
+			}
+		}
+	}
+}
