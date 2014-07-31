@@ -11,7 +11,7 @@ if($msnryContainer.length > 0){
 		isInitLayout: false
 	});
 	msnry.on('layoutComplete', function(){
-		$msnryContainer.find('.image-wrapper').addClass('loaded');
+		$msnryContainer.find('.image-wrapper').animate({opacity: '1'});
 	});
 	imagesLoaded($msnryContainer, function(){
 		msnry.layout();
@@ -21,8 +21,13 @@ if($msnryContainer.length > 0){
 $(function(){
 	if($mapContainer.length > 0){
 		$mapContainer.find('.map-node').on('click', function(){
-			$(this).siblings().find('.info-box').fadeOut();
-			$(this).find('.info-box').fadeIn();
+			var $target = $(this).find('.info-box');
+			if($target.css('display') != 'block'){
+				$(this).siblings().find('.info-box').fadeOut();
+				$target.fadeIn();
+			}else{
+				$target.fadeOut();
+			}
 		});
 	}
 })
