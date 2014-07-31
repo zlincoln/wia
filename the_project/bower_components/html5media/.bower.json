@@ -1,0 +1,39 @@
+{
+  "name": "html5media",
+  "version": "1.1.8",
+  "homepage": "http://html5media.info/",
+  "authors": [
+    "Dave Hall <dave@etianen.com>"
+  ],
+  "description": "html5media enables <video> and <audio> tags in all major browsers",
+  "main": [
+    "dist/api/1.1.8/html5media.min.js",
+    "dist/api/1.1.8/expressInstall.swf",
+    "dist/api/1.1.8/flowplayer.audio.swf",
+    "dist/api/1.1.8/flowplayer.controls.swf",
+    "dist/api/1.1.8/flowplayer.flowplayer.swf"
+  ],
+  "keywords": [
+    "video",
+    "audio",
+    "html5"
+  ],
+  "license": "GPL-3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.1.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.8",
+    "commit": "dbecade72327acb9ddf4d996357bdf73245b75bb"
+  },
+  "_source": "git://github.com/etianen/html5media.git",
+  "_target": "~1.1.8",
+  "_originalSource": "html5media",
+  "_direct": true
+}
