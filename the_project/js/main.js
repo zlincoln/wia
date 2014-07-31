@@ -1,10 +1,16 @@
 var $msnryContainer = $('#masonry-target'),
 		$mapContainer = $('#map');
 
-Modernizr.load({
-	test: Modernizr.video,
-	nope: 'bower_components/html5media/dist/api/1.1.8/html5media.min.js'
-});
+Modernizr.load([
+	{
+		test: Modernizr.video,
+		nope: 'bower_components/html5media/dist/api/1.1.8/html5media.min.js'
+	},
+	{
+		test: Modernizr.canvas,
+		nope: 'bower_components/kineticjs/kinetic.min.js'
+	}
+]);
 
 if($msnryContainer.length > 0){
 	var msnry = new Masonry($msnryContainer[0], {
