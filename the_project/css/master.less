@@ -3,10 +3,36 @@
 @import '../bower_components/lightbox/css/lightbox.css';
 @import 'fix-lightbox';
 
+@dark-wood: #402318;
+@light-wood: #d9ad77;
+@background: #F0E3D2;
 
-div.jumbotron{
-	background: transparent url('../images/camels-hump-cc0.png') center center no-repeat;
+@brand-primary: @dark-wood;
+
+html, body{
+	background-color: @background;
 }
 
+body{
+	border-top: 8px solid @dark-wood;
+}
+
+header{
+	.navbar.navbar-default{
+		padding: 20px 0 30px;
+		background: #733D29;
+		border: none;
+		border-radius: 0px;
+		.navbar-brand{
+			font-size: 2em;
+			color: @background;
+		}
+		.navbar-nav > li > a{
+			color: @background;
+		}
+	}
+}
+
+@import 'template-home';
 @import 'template-gallery';
 @import 'template-contact';
